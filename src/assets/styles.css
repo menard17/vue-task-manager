@@ -1,0 +1,48 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-br from-blue-200 to-blue-500 min-h-screen flex items-center justify-center;
+}
+
+.container {
+  @apply bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg;
+}
+
+.nav-links {
+  @apply flex justify-between mb-6 text-blue-600 font-semibold;
+}
+
+.nav-links a {
+  @apply hover:underline;
+}
+
+.input-field {
+  @apply border p-3 flex-1 rounded-lg shadow-sm;
+}
+
+.primary-button {
+  @apply bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-blue-700;
+}
+
+.task-item {
+  @apply flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md mb-2;
+}
+
+.task-text {
+  @apply text-lg;
+}
+
+.completed-text {
+  @apply line-through text-gray-500;
+}
+
+.success-button {
+  @apply bg-green-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-green-600;
+}
+
+.danger-button {
+  @apply bg-red-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-red-600 ml-2;
+}
