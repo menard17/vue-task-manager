@@ -51,6 +51,22 @@ vue-task-manager/
 
 ---
 
+## Screenshots
+
+### **Login Page**
+
+![Login Page](image-2.png)
+
+### **Task Manager - All Tasks View**
+
+![All Tasks View](image.png)
+
+### **Task Manager - Completed Tasks View**
+
+![Completed Tasks View](image-1.png)
+
+---
+
 ## Coding Practices Applied
 
 ### **1. Vue 3 with Composition API**
