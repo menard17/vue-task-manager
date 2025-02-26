@@ -1,43 +1,51 @@
 <template>
   <div class="container">
-    <div class="task-card">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4">Task Manager</h2>
-      <nav class="navbar">
-        <router-link to="/" class="nav-link">All Tasks</router-link>
-        <router-link to="/completed" class="nav-link"
-          >Completed Tasks</router-link
-        >
-      </nav>
-
-      <div class="task-input">
-        <input
-          v-model="newTask"
-          type="text"
-          placeholder="Enter new task"
-          class="input-field"
-        />
-        <button @click="addTask" class="primary-button">Add Task</button>
+    <div class="login-card">
+      <!-- Logo Section -->
+      <div class="logo-container">
+        <img src="../assets/vip-logo.png" alt="VIP Tutors" class="logo" />
       </div>
 
-      <ul class="task-list">
-        <li v-for="(task, index) in tasks" :key="index" class="task-item">
-          <span :class="{ 'completed-task': task.completed }">{{
-            task.title
-          }}</span>
-          <div>
-            <button
-              v-if="!task.completed"
-              @click="markAsDone(index)"
-              class="success-button"
-            >
-              Done
-            </button>
-            <button @click="deleteTask(index)" class="danger-button">
-              Delete
-            </button>
-          </div>
-        </li>
-      </ul>
+      <!-- Form Section -->
+      <div class="login-content">
+        <h2>Task Manager</h2>
+        <nav class="navbar">
+          <router-link to="/" class="nav-link">All Tasks</router-link>
+          <router-link to="/completed" class="nav-link"
+            >Completed Tasks</router-link
+          >
+        </nav>
+
+        <div class="task-input">
+          <input
+            v-model="newTask"
+            type="text"
+            placeholder="Enter new task"
+            class="input-field"
+          />
+          <button @click="addTask" class="login-button">Add Task</button>
+        </div>
+
+        <ul class="task-list">
+          <li v-for="(task, index) in tasks" :key="index" class="task-item">
+            <span :class="{ 'completed-task': task.completed }">{{
+              task.title
+            }}</span>
+            <div>
+              <button
+                v-if="!task.completed"
+                @click="markAsDone(index)"
+                class="success-button"
+              >
+                Done
+              </button>
+              <button @click="deleteTask(index)" class="danger-button">
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -67,40 +75,6 @@ const deleteTask = (index) => {
 </script>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #a0d8ff, #4a90e2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-}
-.task-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 400px;
-}
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-}
-.nav-link {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-}
 .task-input {
   display: flex;
   gap: 10px;
@@ -120,9 +94,6 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-}
-.primary-button:hover {
-  background: #0033aa;
 }
 .success-button {
   background: green;
